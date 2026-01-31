@@ -303,6 +303,31 @@ let originalTimerSeconds = 0;
 
 // Audio for timer completion
 let audioContext = null;
+let audioUnlocked = false;
+
+// Unlock audio on first user interaction
+function unlockAudio() {
+    if (audioUnlocked) return;
+    
+    try {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        // Create a silent buffer to unlock
+        const buffer = audioContext.createBuffer(1, 1, 22050);
+        const source = audioContext.createBufferSource();
+        source.buffer = buffer;
+        source.connect(audioContext.destination);
+        source.start(0);
+        
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+        
+        audioUnlocked = true;
+        console.log('Audio unlocked');
+    } catch (e) {
+        console.log('Audio unlock failed:', e);
+    }
+}
 
 // Initialize
 function init() {
@@ -374,11 +399,17 @@ function sendTimerNotification(productName) {
 // Play completion sound
 function playCompletionSound() {
     try {
+        // Method 1: Web Audio API
         if (!audioContext) {
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
         }
         
-        // Play a pleasant chime
+        // Resume if suspended
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+        
+        // Play a pleasant chime - louder and longer
         const playTone = (freq, startTime, duration) => {
             const oscillator = audioContext.createOscillator();
             const gainNode = audioContext.createGain();
@@ -389,20 +420,33 @@ function playCompletionSound() {
             oscillator.frequency.value = freq;
             oscillator.type = 'sine';
             
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime + startTime);
+            // Louder volume
+            gainNode.gain.setValueAtTime(0.5, audioContext.currentTime + startTime);
             gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + startTime + duration);
             
             oscillator.start(audioContext.currentTime + startTime);
             oscillator.stop(audioContext.currentTime + startTime + duration);
         };
         
-        // Play a pleasant ascending chime
-        playTone(523.25, 0, 0.3);      // C5
-        playTone(659.25, 0.15, 0.3);   // E5
-        playTone(783.99, 0.3, 0.5);    // G5
+        // Play chime 3 times for emphasis
+        for (let i = 0; i < 3; i++) {
+            const offset = i * 0.6;
+            playTone(523.25, offset, 0.3);      // C5
+            playTone(659.25, offset + 0.1, 0.3);   // E5
+            playTone(783.99, offset + 0.2, 0.4);   // G5
+        }
         
     } catch (e) {
-        console.log('Audio not supported');
+        console.log('Web Audio failed:', e);
+    }
+    
+    // Method 2: Fallback - HTML5 Audio with base64 beep
+    try {
+        const beepSound = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2teleCAFQp/teleCAAdLoKHb1olDDACWocXPfD8A/5yevX1AFwOjnrKHUhMNq5WrjUsYF7WOp4ZBIB7AhJt7OiQmxX2Wb0U2NcOAl3BLQkHBgJd0T0hEwICXdE9IRMCAl3RPSETAgJd0T0hEwICXdE9IRMCAl3RPSETAgJd0T0hEwICXdE9IRMA=');
+        beepSound.volume = 1.0;
+        beepSound.play().catch(e => console.log('Fallback audio failed'));
+    } catch (e) {
+        console.log('Fallback audio not supported');
     }
 }
 
@@ -450,6 +494,9 @@ function updateTimerDisplay() {
 
 // Start timer
 function startTimer() {
+    // Unlock audio on user interaction
+    unlockAudio();
+    
     if (timerSeconds <= 0) {
         timerSeconds = originalTimerSeconds;
         updateTimerDisplay();
