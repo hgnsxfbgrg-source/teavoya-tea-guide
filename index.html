@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泡茶指南 | Teavoya 嘉柏茶業</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2D5016">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍵</text></svg>">
+</head>
+<body>
+    <div class="app">
+        <!-- Notification Permission Banner -->
+        <div class="notification-banner hidden" id="notificationBanner">
+            <span>🔔 開啟通知，泡好茶時提醒你</span>
+            <button id="enableNotification">開啟通知</button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-text">TEAVOYA</span>
+                <span class="logo-subtext">嘉柏茶業</span>
+            </div>
+            <h1 class="title">泡茶指南</h1>
+        </header>
+
+        <!-- Size Selector -->
+        <section class="size-selector">
+            <h2>選擇包裝規格</h2>
+            <div class="size-buttons">
+                <button class="size-btn active" data-size="24">
+                    <span class="size-number">24g</span>
+                    <span class="size-label">小包裝</span>
+                </button>
+                <button class="size-btn" data-size="50">
+                    <span class="size-number">50g</span>
+                    <span class="size-label">大包裝</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="product-section">
+            <h2>選擇茶品</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be injected by JS -->
+            </div>
+        </section>
+
+        <!-- Brewing Guide Modal -->
+        <div class="modal" id="brewingModal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal">&times;</button>
+                <div class="modal-header">
+                    <div class="tea-icon" id="modalIcon">🍵</div>
+                    <h2 id="modalTitle">茶品名稱</h2>
+                    <p class="modal-subtitle" id="modalSubtitle">24g 包裝</p>
+                </div>
+                <div class="brewing-steps" id="brewingSteps">
+                    <!-- Steps will be injected by JS -->
+                </div>
+                <div class="brewing-tips" id="brewingTips">
+                    <!-- Tips will be injected by JS -->
+                </div>
+                
+                <!-- Timer Section -->
+                <div class="timer-section" id="timerSection">
+                    <div class="timer-display">
+                        <span class="timer-time" id="timerDisplay">00:00</span>
+                    </div>
+                    <div class="timer-controls">
+                        <button class="timer-btn timer-start" id="timerStart">
+                            <span class="btn-icon">▶</span>
+                            <span>開始計時</span>
+                        </button>
+                        <button class="timer-btn timer-pause hidden" id="timerPause">
+                            <span class="btn-icon">⏸</span>
+                            <span>暫停</span>
+                        </button>
+                        <button class="timer-btn timer-reset" id="timerReset">
+                            <span class="btn-icon">↺</span>
+                            <span>重設</span>
+                        </button>
+                    </div>
+                    <p class="timer-hint" id="timerHint">建議浸泡時間已自動設定</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Teavoya 嘉柏茶業</p>
+            <p class="footer-contact">
+                <a href="tel:0920169163">0920-169-163</a> |
+                <a href="https://line.me/R/ti/p/%40myteainch" target="_blank">LINE @myteainch</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
