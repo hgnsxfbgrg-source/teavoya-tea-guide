@@ -9,6 +9,7 @@ const products = {
             icon: '🍯',
             desc: '蜜香馥郁・甘甜滑順',
             brewTime: 300, // 5 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/honey-flavor-black-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '將水煮沸後稍微放涼', highlight: '90-95°C' },
@@ -30,6 +31,7 @@ const products = {
             icon: '🫖',
             desc: '醇厚陳香・養生茶飲',
             brewTime: 420, // 7 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/Yunnan-Puerh-Tea-Bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '100°C' },
@@ -51,6 +53,7 @@ const products = {
             icon: '💎',
             desc: '肉桂香氣・薄荷尾韻',
             brewTime: 300, // 5 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/ruby-black-teabag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
@@ -72,6 +75,7 @@ const products = {
             icon: '🍑',
             desc: '甜美清新・香甜解膩',
             brewTime: 480, // 8 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/Teavoya-Peach-Oolong-Tea-Bag-24g',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
@@ -93,6 +97,7 @@ const products = {
             icon: '🌿',
             desc: '清香馥郁・回甘悠長',
             brewTime: 360, // 6 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/Teavoya-Oolong-Tea-Bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
@@ -114,6 +119,7 @@ const products = {
             icon: '🌸',
             desc: '茉莉花香・清新淡雅',
             brewTime: 600, // 10 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/Teavoya-Premium-Jasmine-Green-Tea-Bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '綠茶適合較低水溫', highlight: '80°C' },
@@ -135,6 +141,7 @@ const products = {
             icon: '🍵',
             desc: '花香淡雅・斯里蘭卡精選',
             brewTime: 300, // 5 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/Ceylon-Black-Tea-FOP',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '100°C' },
@@ -156,6 +163,7 @@ const products = {
             icon: '🌼',
             desc: '桂花清香・烏龍茶韻',
             brewTime: 360, // 6 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/Osmanthus-oolong-50g-filter-free-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
@@ -177,6 +185,7 @@ const products = {
             icon: '🫖',
             desc: '佛手柑香・經典複合茶香',
             brewTime: 480, // 8 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/earl-grey-teabag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
@@ -200,6 +209,7 @@ const products = {
             icon: '🥛',
             desc: '濃烈厚茶基・奶茶首選',
             brewTime: 2400, // 40 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/hong-kong-milk-tea-black-tea-bags-50g-50packs',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '將水煮沸', highlight: '100°C' },
@@ -223,6 +233,7 @@ const products = {
             icon: '🍵',
             desc: '純正古早味・無糖無添加',
             brewTime: 900, // 15 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/black-tea-bags-traditional-50g-50packs',
             brewing: {
                 steps: [
                     { title: '煮水', detail: '將水煮沸後熄火', highlight: '4000ml' },
@@ -245,6 +256,7 @@ const products = {
             icon: '🌾',
             desc: '麥香濃郁・超高CP值',
             brewTime: 900, // 15 分鐘
+            buyUrl: 'https://www.teavoya.com.tw/barley-tea-bag',
             brewing: {
                 steps: [
                     { title: '煮水', detail: '將水煮沸後熄火', highlight: '4000ml' },
@@ -509,6 +521,15 @@ function showBrewing(product) {
     modalIcon.textContent = product.icon;
     modalTitle.textContent = product.name;
     modalSubtitle.textContent = `${currentSize}g 包裝`;
+    
+    // Update buy button
+    const buyBtn = document.getElementById('buyBtn');
+    if (buyBtn && product.buyUrl) {
+        buyBtn.href = product.buyUrl;
+        buyBtn.style.display = 'inline-flex';
+    } else if (buyBtn) {
+        buyBtn.style.display = 'none';
+    }
     
     // Render steps
     brewingSteps.innerHTML = product.brewing.steps.map((step, index) => `
