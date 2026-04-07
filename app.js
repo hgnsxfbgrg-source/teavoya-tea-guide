@@ -6,7 +6,7 @@ const products = {
         {
             id: 'honey-black-tea',
             name: '初韻蜜香紅茶',
-            icon: '🍯',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.19.png?v=1773273503',
             desc: '蜜香馥郁・甘甜滑順',
             brewTime: 300, // 5 分鐘
             buyUrl: 'https://www.teavoya.com.tw/honey-flavor-black-tea-bag',
@@ -28,7 +28,7 @@ const products = {
         {
             id: 'puerh-tea',
             name: '雲南輕熟普洱茶',
-            icon: '🫖',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/Gemini_Generated_Image_9pyowq9pyowq9pyo.png?v=1773454091',
             desc: '醇厚陳香・養生茶飲',
             brewTime: 420, // 7 分鐘
             buyUrl: 'https://www.teavoya.com.tw/Yunnan-Puerh-Tea-Bag',
@@ -50,7 +50,7 @@ const products = {
         {
             id: 'ruby-black-tea',
             name: '經典紅玉紅茶',
-            icon: '💎',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.18.png?v=1773273011',
             desc: '肉桂香氣・薄荷尾韻',
             brewTime: 300, // 5 分鐘
             buyUrl: 'https://www.teavoya.com.tw/ruby-black-teabag',
@@ -72,7 +72,7 @@ const products = {
         {
             id: 'peach-oolong',
             name: '白桃烏龍風味茶',
-            icon: '🍑',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.06.png?v=1773272934',
             desc: '甜美清新・香甜解膩',
             brewTime: 480, // 8 分鐘
             buyUrl: 'https://www.teavoya.com.tw/Teavoya-Peach-Oolong-Tea-Bag-24g',
@@ -94,7 +94,7 @@ const products = {
         {
             id: 'oolong-tea',
             name: '清香烏龍茶',
-            icon: '🌿',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/background_removal_TUFIQTM0eWR0WVUjMSM2Y2FmMjhhNTNhMzRiYzBiNTFlMTQ3ZGQxNmEyZTRmMCM1MzY2IyNUUkFOU0ZPUk1BVElPTl9SRVFVRVNU.png?v=1772855803',
             desc: '清香馥郁・回甘悠長',
             brewTime: 360, // 6 分鐘
             buyUrl: 'https://www.teavoya.com.tw/Teavoya-Oolong-Tea-Bag',
@@ -116,7 +116,7 @@ const products = {
         {
             id: 'jasmine-green-tea',
             name: '特級茉香綠茶',
-            icon: '🌸',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.03.jpg?v=1773272868',
             desc: '茉莉花香・清新淡雅',
             brewTime: 600, // 10 分鐘
             buyUrl: 'https://www.teavoya.com.tw/Teavoya-Premium-Jasmine-Green-Tea-Bag',
@@ -138,7 +138,7 @@ const products = {
         {
             id: 'ceylon-tea',
             name: '錫蘭紅茶 FOP',
-            icon: '🍵',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.09.png?v=1773273473',
             desc: '花香淡雅・斯里蘭卡精選',
             brewTime: 300, // 5 分鐘
             buyUrl: 'https://www.teavoya.com.tw/Ceylon-Black-Tea-FOP',
@@ -160,7 +160,7 @@ const products = {
         {
             id: 'osmanthus-oolong',
             name: '桂花烏龍茶',
-            icon: '🌼',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.08.png?v=1773273251',
             desc: '桂花清香・烏龍茶韻',
             brewTime: 360, // 6 分鐘
             buyUrl: 'https://www.teavoya.com.tw/Osmanthus-oolong-50g-filter-free-tea-bag',
@@ -182,7 +182,7 @@ const products = {
         {
             id: 'earl-grey',
             name: '伯爵紅茶',
-            icon: '🫖',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/background_removal_TUFIQTM3U09IUDQjMSM2Y2FmMjhhNTNhMzRiYzBiNTFlMTQ3ZGQxNmEyZTRmMCM1MzY2IyNUUkFOU0ZPUk1BVElPTl9SRVFVRVNU.png?v=1773273159',
             desc: '佛手柑香・經典複合茶香',
             brewTime: 480, // 8 分鐘
             buyUrl: 'https://www.teavoya.com.tw/earl-grey-teabag',
@@ -206,7 +206,7 @@ const products = {
         {
             id: 'hk-milk-tea-50',
             name: '港式奶茶專用紅茶',
-            icon: '🥛',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/644B4016_-1.jpg?v=1773273330',
             desc: '濃烈厚茶基・奶茶首選',
             brewTime: 2400, // 40 分鐘
             buyUrl: 'https://www.teavoya.com.tw/hong-kong-milk-tea-black-tea-bags-50g-50packs',
@@ -230,7 +230,7 @@ const products = {
         {
             id: 'traditional-black-tea-50',
             name: '古早味紅茶',
-            icon: '🍵',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.01.png?v=1773273418',
             desc: '純正古早味・無糖無添加',
             brewTime: 900, // 15 分鐘
             buyUrl: 'https://www.teavoya.com.tw/black-tea-bags-traditional-50g-50packs',
@@ -253,7 +253,7 @@ const products = {
         {
             id: 'barley-black-tea-50',
             name: '老麥紅茶',
-            icon: '🌾',
+            icon: 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/NO.11.png?v=1773273796',
             desc: '麥香濃郁・超高CP值',
             brewTime: 900, // 15 分鐘
             buyUrl: 'https://www.teavoya.com.tw/barley-tea-bag',
@@ -460,7 +460,7 @@ function renderProducts() {
         card.className = 'product-card';
         card.dataset.id = product.id;
         card.innerHTML = `
-            <span class="product-icon">${product.icon}</span>
+            ${product.icon.startsWith("http") ? `<img class="product-img" src="${product.icon}" alt="${product.name}">` : `<span class="product-icon">${product.icon}</span>`}
             <div class="product-name">${product.name}</div>
             <div class="product-desc">${product.desc}</div>
         `;
@@ -565,7 +565,11 @@ function onTimerComplete() {
 // Show brewing guide modal
 function showBrewing(product) {
     currentProduct = product;
-    modalIcon.textContent = product.icon;
+    if (product.icon.startsWith("http")) {
+        modalIcon.innerHTML = `<img class="modal-product-img" src="${product.icon}" alt="${product.name}">`;
+    } else {
+        modalIcon.textContent = product.icon;
+    }
     modalTitle.textContent = product.name;
     modalSubtitle.textContent = `${currentSize}g 包裝`;
     
