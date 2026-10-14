@@ -1,7 +1,7 @@
 // Teavoya Tea Guide Service Worker
 // Handles background notifications
 
-const CACHE_NAME = 'teavoya-tea-guide-v1';
+const CACHE_NAME = 'teavoya-tea-guide-v2';
 
 // Install event
 self.addEventListener('install', (event) => {
@@ -21,13 +21,13 @@ self.addEventListener('notificationclick', (event) => {
         clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
             // Focus existing window if available
             for (const client of clientList) {
-                if (client.url.includes('teavoya') && 'focus' in client) {
+                if (client.url.startsWith(self.registration.scope) && 'focus' in client) {
                     return client.focus();
                 }
             }
             // Open new window if no existing window
             if (clients.openWindow) {
-                return clients.openWindow('/');
+                return clients.openWindow(self.registration.scope);
             }
         })
     );

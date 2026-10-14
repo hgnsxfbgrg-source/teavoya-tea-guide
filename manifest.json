@@ -2,7 +2,7 @@
   "name": "Teavoya 泡茶指南",
   "short_name": "泡茶指南",
   "description": "Teavoya 嘉柏茶業專屬泡茶指南",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#F9F7F4",
   "theme_color": "#2D5016",

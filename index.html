@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>泡茶指南 | Teavoya 嘉柏茶業</title>
+    <meta name="description" content="Teavoya 嘉柏茶業官方泡茶指南：杯泡小茶包、24g 中茶包、50g 業務用茶包與京都抹茶的水溫、水量、浸泡時間，內建計時器。">
+    <meta property="og:title" content="泡茶指南 | Teavoya 嘉柏茶業">
+    <meta property="og:description" content="每款茶的水溫、水量、浸泡時間一次看懂，內建泡茶計時器。">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -16,12 +20,6 @@
 </head>
 <body>
     <div class="app">
-        <!-- Notification Permission Banner -->
-        <div class="notification-banner hidden" id="notificationBanner">
-            <span>🔔 開啟通知，泡好茶時提醒你</span>
-            <button id="enableNotification">開啟通知</button>
-        </div>
-
         <!-- Header -->
         <header class="header">
             <div class="logo">
@@ -31,18 +29,11 @@
             <h1 class="title">泡茶指南</h1>
         </header>
 
-        <!-- Size Selector -->
+        <!-- Category Selector -->
         <section class="size-selector">
-            <h2>選擇包裝規格</h2>
-            <div class="size-buttons">
-                <button class="size-btn active" data-size="24">
-                    <span class="size-number">24g</span>
-                    <span class="size-label">小包裝</span>
-                </button>
-                <button class="size-btn" data-size="50">
-                    <span class="size-number">50g</span>
-                    <span class="size-label">大包裝</span>
-                </button>
+            <h2>選擇茶包類型</h2>
+            <div class="size-buttons" id="categoryButtons" role="tablist">
+                <!-- Categories will be injected by JS -->
             </div>
         </section>
 
@@ -57,11 +48,11 @@
         <!-- Brewing Guide Modal -->
         <div class="modal" id="brewingModal">
             <div class="modal-content">
-                <button class="modal-close" id="closeModal">&times;</button>
+                <button class="modal-close" id="closeModal" aria-label="關閉">&times;</button>
                 <div class="modal-header">
                     <div class="tea-icon" id="modalIcon">🍵</div>
                     <h2 id="modalTitle">茶品名稱</h2>
-                    <p class="modal-subtitle" id="modalSubtitle">24g 包裝</p>
+                    <p class="modal-subtitle" id="modalSubtitle"></p>
                 </div>
                 <div class="brewing-steps" id="brewingSteps">
                     <!-- Steps will be injected by JS -->
@@ -72,10 +63,10 @@
                 
                 <!-- Action Buttons -->
                 <div class="action-buttons">
-                    <a href="#" id="buyBtn" class="action-btn buy-btn" target="_blank">
+                    <a href="#" id="buyBtn" class="action-btn buy-btn" target="_blank" rel="noopener">
                         🛒 立即購買
                     </a>
-                    <a href="https://lin.ee/SiYx6HB" class="action-btn line-btn" target="_blank">
+                    <a href="https://lin.ee/SiYx6HB" class="action-btn line-btn" target="_blank" rel="noopener">
                         💬 LINE 諮詢
                     </a>
                 </div>
@@ -109,8 +100,9 @@
             <p>© 2026 Teavoya 嘉柏茶業</p>
             <p class="footer-contact">
                 <a href="tel:0920169163">0920-169-163</a> |
-                <a href="https://lin.ee/SiYx6HB" target="_blank">LINE @myteainch</a>
+                <a href="https://lin.ee/SiYx6HB" target="_blank" rel="noopener">LINE @myteainch</a>
             </p>
+            <p class="footer-contact"><a href="https://teavoya.com.tw/" target="_blank" rel="noopener">teavoya.com.tw 官方網站</a></p>
         </footer>
     </div>
 
