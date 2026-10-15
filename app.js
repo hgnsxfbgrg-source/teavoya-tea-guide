@@ -164,8 +164,7 @@ const products = {
                 ],
                 tips: [
                     '紅茶的醇厚與草莓的酸甜平衡，尾韻淡淡回甘',
-                    '冷泡更能帶出草莓的清新感（推薦）',
-                    '無添加人工色素'
+                    '冷泡更能帶出草莓的清新感（推薦）'
                 ],
                 cold: '1 包加 500ml 常溫或冰水，放冰箱冷泡 4～8 小時'
             }
@@ -237,7 +236,7 @@ const products = {
                     '多種熱帶水果風味混搭，茶湯繽紛酸甜',
                     '冷泡後果香更鮮明（推薦）',
                     '加氣泡水就是派對飲品，大人小孩都喜歡',
-                    '無咖啡因，晚上喝也不影響睡眠'
+                    '無咖啡因，晚上也能喝'
                 ],
                 cold: '1 包加 500ml 冷水，放冰箱冷泡 6～8 小時；喝前可兌氣泡水'
             }
@@ -247,7 +246,7 @@ const products = {
             name: '洋甘菊橙花茶',
             spec: '2g × 15 包・無咖啡因',
             icon: img('FullSizeRender.jpg?v=1778720348'),
-            desc: '無咖啡因・午後紓壓',
+            desc: '無咖啡因・午後花草茶',
             brewTime: 240,
             buyUrl: SHOP + 'afternoon-exhale-chamomile-orange-blossom',
             brewing: {
@@ -259,7 +258,7 @@ const products = {
                     { title: '加分', detail: '加一片檸檬，橙花香氣更立體' }
                 ],
                 tips: [
-                    '德國洋甘菊 × 義大利橙花，無咖啡因不影響睡眠',
+                    '德國洋甘菊 × 義大利橙花，無咖啡因，晚上也能喝',
                     '入口橙花蜜甜，中段洋甘菊蘋果香，不加糖也順口',
                     '孕哺婦、服用抗凝血劑者請先諮詢醫師；對菊科植物過敏者請勿飲用'
                 ],
@@ -296,7 +295,7 @@ const products = {
             name: '雲南輕熟普洱茶',
             spec: '24g × 25 包・免濾茶包',
             icon: img('JG_C5706.jpg?v=1776692958'),
-            desc: '醇厚陳香・養生茶飲',
+            desc: '醇厚陳香・溫潤順口',
             brewTime: 420, // 7 分鐘
             buyUrl: SHOP + 'yunnan-puerh-tea-bag',
             brewing: {
@@ -575,7 +574,7 @@ const products = {
             name: '港式奶茶專用紅茶',
             spec: '50g・2 / 15 / 50 包',
             icon: img('644B6067.jpg?v=1776686958'),
-            desc: '濃烈厚茶基・奶茶首選',
+            desc: '濃烈厚茶基・撞奶不澀',
             brewTime: 2400, // 40 分鐘
             buyUrl: SHOP + 'hk-milk-tea-50-teabag',
             brewing: {
@@ -588,7 +587,7 @@ const products = {
                     { title: '加入淡奶', detail: '每杯 250ml 茶湯，加入淡奶', highlight: '50ml / 杯' }
                 ],
                 tips: [
-                    '被稱為「最適合做奶茶的紅茶」',
+                    '撞奶不苦不澀，適合做道地港式奶茶',
                     '斯里蘭卡＋爪哇優質紅茶調配',
                     'FOP、OP、BOP 專業分級，層次豐富',
                     '每杯茶底成本只要 $2.5'
@@ -671,7 +670,7 @@ const products = {
             name: '冰抹茶',
             spec: '京都抹茶粉・100g / 500g',
             icon: img('IMG-8760.png?v=1770645380'),
-            desc: '夏日消暑首選',
+            desc: '冰涼清爽・夏日消暑',
             buyUrl: SHOP + 'kyoto-matcha-powder',
             brewing: {
                 steps: [
