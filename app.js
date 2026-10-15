@@ -491,22 +491,22 @@ const products = {
             id: 'golden-assam',
             name: '金穗阿薩姆紅茶',
             spec: '24g × 25 包・免濾茶包',
-            icon: null, // TODO: 官網上架後補產品圖與購買連結
+            icon: 'images/golden-assam.jpg', // TODO: 官網上架後補購買連結
             desc: '麥芽香氣・濃郁醇厚',
-            brewTime: 300,
+            brewTime: 600, // 10 分鐘（依包裝建議）
             buyUrl: null,
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
-                    { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
-                    { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '5 分鐘', isTimerStep: true },
-                    { title: '享用', detail: '可純飲，或加鮮奶做成奶茶' }
+                    { title: '準備熱水', detail: '將水煮沸', highlight: '95°C' },
+                    { title: '注入熱水', detail: '倒入茶壺或鍋中', highlight: '1500ml' },
+                    { title: '放入茶包', detail: '將 24g 茶包放入熱水中' },
+                    { title: '上蓋悶泡', detail: '蓋上蓋子靜置', highlight: '10 分鐘', isTimerStep: true },
+                    { title: '調味', detail: '取出茶包，放入適量的糖（依喜好）' }
                 ],
                 tips: [
-                    '阿薩姆紅茶特有的麥芽香，茶湯濃郁醇厚',
-                    '茶味飽滿，加奶不易被蓋過，最適合做奶茶',
-                    '做冰紅茶時可多悶 1～2 分鐘，加冰後茶味不變淡'
+                    '台灣產阿薩姆紅茶，麥芽香氣、茶湯濃郁醇厚',
+                    '茶味飽滿，加奶不易被蓋過，也適合做奶茶',
+                    '冰鎮後茶味依然紮實，適合做冰紅茶'
                 ]
             }
         },
@@ -514,20 +514,20 @@ const products = {
             id: 'amber-red-oolong',
             name: '琥珀紅烏龍茶',
             spec: '24g × 25 包・免濾茶包',
-            icon: null, // TODO: 官網上架後補產品圖與購買連結
+            icon: 'images/amber-red-oolong.jpg', // TODO: 官網上架後補購買連結
             desc: '熟果蜜香・琥珀茶湯',
-            brewTime: 360,
+            brewTime: 600, // 10 分鐘（依包裝建議）
             buyUrl: null,
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '將水煮沸後稍微放涼', highlight: '90-95°C' },
-                    { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
-                    { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '6 分鐘', isTimerStep: true },
-                    { title: '取出茶包', detail: '輕輕取出，避免擠壓' }
+                    { title: '準備熱水', detail: '將水煮沸', highlight: '95°C' },
+                    { title: '注入熱水', detail: '倒入茶壺或鍋中', highlight: '1500ml' },
+                    { title: '放入茶包', detail: '將 24g 茶包放入熱水中' },
+                    { title: '上蓋悶泡', detail: '蓋上蓋子靜置', highlight: '10 分鐘', isTimerStep: true },
+                    { title: '調味', detail: '取出茶包，放入適量的糖（依喜好）' }
                 ],
                 tips: [
-                    '重發酵烏龍，兼具紅茶的甘醇與烏龍的茶韻',
+                    '台灣產重發酵烏龍，兼具紅茶的甘醇與烏龍的茶韻',
                     '茶湯琥珀透亮，帶熟果與蜜香',
                     '冷熱皆宜，冰鎮後果香更明顯'
                 ]
