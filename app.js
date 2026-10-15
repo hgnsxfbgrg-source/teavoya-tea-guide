@@ -4,7 +4,7 @@
 const SHOP = 'https://teavoya.com.tw/products/';
 
 // 泡茶指南專屬優惠碼（Shopify 折扣「泡茶指南專屬 9 折」）；設為 null 即關閉
-const PROMO = { code: 'TEAGUIDE', text: '全單 9 折' };
+const PROMO = { code: 'TEAGUIDE', text: '全單 9 折', limit: '每人限用一次' };
 
 // 官網連結：帶優惠碼（結帳自動套用）並標記來源，Shopify 報表可看出從指南來的訂單
 function shopLink(path) {
@@ -927,7 +927,7 @@ function renderPromo() {
     document.getElementById('shopLink').href = shopLink('/');
     if (!PROMO) return;
     document.getElementById('promoCode').textContent = PROMO.code;
-    document.getElementById('promoDesc').textContent = `${PROMO.text}・點「立即購買」自動套用`;
+    document.getElementById('promoDesc').textContent = `${PROMO.text}（${PROMO.limit}）・點「立即購買」自動套用`;
     promoNote.textContent = `🎁 已自動套用優惠碼 ${PROMO.code}，結帳${PROMO.text}`;
     promoBanner.hidden = false;
 }
