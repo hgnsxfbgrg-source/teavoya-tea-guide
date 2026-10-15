@@ -2,6 +2,17 @@
 // 嘉柏茶業專屬產品沖泡指南
 
 const SHOP = 'https://teavoya.com.tw/products/';
+
+// 泡茶指南專屬優惠碼（Shopify 折扣「泡茶指南專屬 9 折」）；設為 null 即關閉
+const PROMO = { code: 'TEAGUIDE', text: '全單 9 折' };
+
+// 官網連結：帶優惠碼（結帳自動套用）並標記來源，Shopify 報表可看出從指南來的訂單
+function shopLink(path) {
+    const target = `${path}?utm_source=tea-guide&utm_medium=app`;
+    return PROMO
+        ? `https://teavoya.com.tw/discount/${PROMO.code}?redirect=${encodeURIComponent(target)}`
+        : `https://teavoya.com.tw${target}`;
+}
 const CDN = 'https://cdn.shopify.com/s/files/1/0764/8388/7301/files/';
 
 // Shopify CDN 圖片，指定寬度以減少流量
@@ -754,6 +765,9 @@ const timerPause = document.getElementById('timerPause');
 const timerReset = document.getElementById('timerReset');
 const timerHint = document.getElementById('timerHint');
 const buyBtn = document.getElementById('buyBtn');
+const promoBanner = document.getElementById('promoBanner');
+const promoCopy = document.getElementById('promoCopy');
+const promoNote = document.getElementById('promoNote');
 
 let currentCategory = '24';
 let currentFilter = null;
@@ -793,6 +807,7 @@ function unlockAudio() {
 
 // Initialize
 function init() {
+    renderPromo();
     renderCategories();
     renderFilters();
     renderProducts();
@@ -905,6 +920,36 @@ function playCompletionSound() {
     } catch (e) {
         console.log('Web Audio failed:', e);
     }
+}
+
+// Promo code banner
+function renderPromo() {
+    document.getElementById('shopLink').href = shopLink('/');
+    if (!PROMO) return;
+    document.getElementById('promoCode').textContent = PROMO.code;
+    document.getElementById('promoDesc').textContent = `${PROMO.text}・點「立即購買」自動套用`;
+    promoNote.textContent = `🎁 已自動套用優惠碼 ${PROMO.code}，結帳${PROMO.text}`;
+    promoBanner.hidden = false;
+}
+
+async function copyPromoCode() {
+    try {
+        await navigator.clipboard.writeText(PROMO.code);
+    } catch (e) {
+        // 舊瀏覽器沒有 clipboard API
+        const input = document.createElement('input');
+        input.value = PROMO.code;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        input.remove();
+    }
+    promoCopy.textContent = '已複製 ✓';
+    promoCopy.classList.add('copied');
+    setTimeout(() => {
+        promoCopy.textContent = '複製';
+        promoCopy.classList.remove('copied');
+    }, 2000);
 }
 
 // Render category tabs
@@ -1086,8 +1131,9 @@ function showBrewing(product) {
     modalTitle.textContent = product.name;
     modalSubtitle.textContent = product.spec;
 
+    promoNote.hidden = !(PROMO && product.buyUrl);
     if (product.buyUrl) {
-        buyBtn.href = product.buyUrl;
+        buyBtn.href = shopLink(new URL(product.buyUrl).pathname);
         buyBtn.style.display = 'inline-flex';
     } else {
         buyBtn.style.display = 'none';
@@ -1167,6 +1213,8 @@ function setupEventListeners() {
         const btn = e.target.closest('.size-btn');
         if (btn) selectCategory(btn.dataset.category);
     });
+
+    promoCopy.addEventListener('click', copyPromoCode);
 
     filterChips.addEventListener('click', (e) => {
         const chip = e.target.closest('.filter-chip');

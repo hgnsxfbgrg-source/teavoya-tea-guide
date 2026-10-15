@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20261015b">
+    <link rel="stylesheet" href="style.css?v=20261015d">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2D5016">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,6 +28,16 @@
             </div>
             <h1 class="title">泡茶指南</h1>
         </header>
+
+        <!-- Promo Code -->
+        <section class="promo" id="promoBanner" hidden>
+            <div class="promo-text">
+                <span class="promo-label">🎁 泡茶指南專屬優惠</span>
+                <span class="promo-code" id="promoCode"></span>
+                <span class="promo-desc" id="promoDesc"></span>
+            </div>
+            <button class="promo-copy" id="promoCopy">複製</button>
+        </section>
 
         <!-- Category Selector -->
         <section class="size-selector">
@@ -65,6 +75,7 @@
                 </div>
                 
                 <!-- Action Buttons -->
+                <p class="promo-note" id="promoNote" hidden></p>
                 <div class="action-buttons">
                     <a href="#" id="buyBtn" class="action-btn buy-btn" target="_blank" rel="noopener">
                         🛒 立即購買
@@ -105,10 +116,10 @@
                 <a href="tel:0920169163">0920-169-163</a> |
                 <a href="https://line.me/R/ti/p/@teavoya" target="_blank" rel="noopener">LINE @teavoya</a>
             </p>
-            <p class="footer-contact"><a href="https://teavoya.com.tw/" target="_blank" rel="noopener">teavoya.com.tw 官方網站</a></p>
+            <p class="footer-contact"><a href="https://teavoya.com.tw/" id="shopLink" target="_blank" rel="noopener">teavoya.com.tw 官方網站</a></p>
         </footer>
     </div>
 
-    <script src="app.js?v=20261015b"></script>
+    <script src="app.js?v=20261015d"></script>
 </body>
 </html>
