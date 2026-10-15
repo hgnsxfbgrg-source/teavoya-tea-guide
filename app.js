@@ -773,12 +773,37 @@ function init() {
     setupEventListeners();
     openFromHash();
 
-    // Register service worker for background notifications
+    // Register service worker for offline use and background notifications
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js').catch(err => {
             console.log('Service worker registration failed:', err);
         });
+        // 先把全部產品圖存起來，離線時沒點過的茶也看得到圖
+        navigator.serviceWorker.ready.then(reg => {
+            const urls = Object.values(products).flat()
+                .filter(p => p.icon)
+                .map(p => new URL(p.icon, location.href).href);
+            reg.active?.postMessage({ type: 'precache', urls: [...new Set(urls)] });
+        });
     }
+}
+
+// 計時中讓螢幕保持亮著，避免手機自動鎖定後漏掉提醒
+let wakeLock = null;
+
+async function keepScreenOn() {
+    if (!('wakeLock' in navigator) || wakeLock) return;
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        wakeLock.addEventListener('release', () => { wakeLock = null; });
+    } catch (e) {
+        // 省電模式等情況會被拒絕，計時照常進行
+    }
+}
+
+function allowScreenOff() {
+    wakeLock?.release();
+    wakeLock = null;
 }
 
 // Ask for notification permission only when the user starts a timer
@@ -941,7 +966,10 @@ function startTimer() {
 
     isTimerRunning = true;
     timerEndAt = Date.now() + timerSeconds * 1000;
-    timerHint.textContent = '計時中，可以先去忙，時間到會提醒你';
+    timerHint.textContent = 'wakeLock' in navigator
+        ? '計時中，螢幕會保持亮著，時間到會響鈴提醒'
+        : '計時中，請勿鎖定螢幕，時間到會響鈴提醒';
+    keepScreenOn();
     timerStart.classList.add('running');
     timerStart.querySelector('span:last-child').textContent = '計時中...';
     timerStart.querySelector('.btn-icon').textContent = '⏱';
@@ -952,6 +980,7 @@ function startTimer() {
 
 // Pause timer
 function pauseTimer() {
+    allowScreenOff();
     clearInterval(timerInterval);
     isTimerRunning = false;
     timerStart.classList.remove('running');
@@ -961,6 +990,7 @@ function pauseTimer() {
 
 // Stop timer
 function stopTimer() {
+    allowScreenOff();
     clearInterval(timerInterval);
     isTimerRunning = false;
     timerStart.classList.remove('running');
@@ -1103,7 +1133,10 @@ function setupEventListeners() {
 
     // Catch up immediately when returning to the tab
     document.addEventListener('visibilitychange', () => {
-        if (!document.hidden && isTimerRunning) tick();
+        if (!document.hidden && isTimerRunning) {
+            tick();
+            keepScreenOn(); // 切回來時重新保持螢幕亮著（切走時系統會自動解除）
+        }
     });
 }
 
