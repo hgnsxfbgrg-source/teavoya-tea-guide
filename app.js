@@ -570,7 +570,7 @@ const products = {
                 steps: [
                     { title: '準備熱水', detail: '將水煮沸', highlight: '100°C' },
                     { title: '放入茶包', detail: '將 50g 茶包放入大茶壺' },
-                    { title: '注入熱水', detail: '一包可煮 10 杯奶茶', highlight: '700ml' },
+                    { title: '注入熱水', detail: '一包 50g 茶包搭配 2500cc 水', highlight: '2500ml' },
                     { title: '鍋煮悶泡', detail: '蓋上蓋子靜置', highlight: '40 分鐘', isTimerStep: true },
                     { title: '取出茶包', detail: '輕輕取出，避免擠壓' },
                     { title: '加入奶類', detail: '加入淡奶或煉奶', highlight: '100-150ml' }
