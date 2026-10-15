@@ -55,7 +55,7 @@ const products = {
             name: '奶香金萱烏龍',
             spec: '3g × 20 包・三角立體茶包',
             icon: img('Teavoya_e27e4b6c-02b7-4f93-a619-aadedbd83b1c.jpg?v=1771930906'),
-            desc: '天然奶香・清甜順口',
+            desc: '牛奶糖香・清甜順口',
             brewTime: 180,
             buyUrl: SHOP + 'milky-jinxuan-oolong',
             brewing: {
@@ -67,7 +67,7 @@ const products = {
                     { title: '取出茶包', detail: '茶包可保留回沖 2～3 次' }
                 ],
                 tips: [
-                    '台灣金萱品種特有的天然牛奶糖香，不加奶也有奶香',
+                    '台灣金萱品種特有的牛奶糖香，不加奶也有奶香',
                     '茶湯淡金綠，清甜順口',
                     '熱泡、冷泡都好喝'
                 ],
@@ -366,7 +366,7 @@ const products = {
             name: '藍莓風味紅茶',
             spec: '24g × 25 包・免濾茶包',
             icon: img('NO.07.png?v=1773273063'),
-            desc: '錫蘭紅茶・天然藍莓',
+            desc: '錫蘭紅茶・藍莓果香',
             brewTime: 300,
             buyUrl: SHOP + 'blueberry-black-tea-bag',
             brewing: {
@@ -378,7 +378,7 @@ const products = {
                     { title: '取出茶包', detail: '輕輕取出，避免擠壓' }
                 ],
                 tips: [
-                    '錫蘭紅茶基底搭配天然藍莓風味，茶湯深紫紅',
+                    '錫蘭紅茶基底搭配藍莓風味，茶湯深紫紅',
                     '冰飲加果汁特別好看，果茶調飲百搭',
                     '泡好後冰鎮，香氣更清爽'
                 ]
@@ -660,7 +660,7 @@ const products = {
                     { title: '加入鮮奶', detail: '倒入溫熱鮮奶', highlight: '150-200ml' }
                 ],
                 tips: [
-                    '京都產區遮光栽培，茶胺酸高、苦澀低、帶天然旨味',
+                    '京都產區遮光栽培，茶胺酸高、苦澀低、帶有旨味（鮮味）',
                     '400 目超細研磨，溶解快、不沉底',
                     '開封後夾緊袋口冷藏，2 個月內喝完風味最佳'
                 ]
