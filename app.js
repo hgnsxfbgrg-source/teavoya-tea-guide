@@ -573,7 +573,7 @@ const products = {
                     { title: '注入熱水', detail: '一包 50g 茶包搭配 2500cc 水', highlight: '2500ml' },
                     { title: '鍋煮悶泡', detail: '蓋上蓋子靜置', highlight: '40 分鐘', isTimerStep: true },
                     { title: '取出茶包', detail: '輕輕取出，避免擠壓' },
-                    { title: '加入奶類', detail: '加入淡奶或煉奶', highlight: '100-150ml' }
+                    { title: '加入淡奶', detail: '每杯 250ml 茶湯，加入淡奶', highlight: '50ml / 杯' }
                 ],
                 tips: [
                     '被稱為「最適合做奶茶的紅茶」',
