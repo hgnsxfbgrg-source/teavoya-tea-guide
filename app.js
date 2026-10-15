@@ -209,7 +209,7 @@ const products = {
         {
             id: 'tropical-fruit',
             name: '熱帶水果風味茶',
-            spec: '6g × 15 包',
+            spec: '6g × 15 包・無咖啡因',
             icon: img('Teavoya_2ec8b310-ad13-4ab3-90fd-abee04dbca9d.jpg?v=1771844025'),
             desc: '繽紛果香・酸甜清爽',
             brewTime: 300,
@@ -225,7 +225,8 @@ const products = {
                 tips: [
                     '多種熱帶水果風味混搭，茶湯繽紛酸甜',
                     '冷泡後果香更鮮明（推薦）',
-                    '加氣泡水就是派對飲品，大人小孩都喜歡'
+                    '加氣泡水就是派對飲品，大人小孩都喜歡',
+                    '無咖啡因，晚上喝也不影響睡眠'
                 ],
                 cold: '1 包加 500ml 冷水，放冰箱冷泡 6～8 小時；喝前可兌氣泡水'
             }
@@ -506,7 +507,6 @@ const products = {
                 ],
                 tips: [
                     '台灣產阿薩姆紅茶，麥芽香氣、茶湯濃郁醇厚',
-                    '茶味飽滿，加奶不易被蓋過，也適合做奶茶',
                     '冰鎮後茶味依然紮實，適合做冰紅茶'
                 ]
             }
@@ -712,13 +712,13 @@ const filters = [
     {
         key: 'decaf',
         label: '🌙 無咖啡因',
-        ids: ['chamomile-orange-blossom']
+        ids: ['chamomile-orange-blossom', 'tropical-fruit']
     },
     {
         key: 'milk',
         label: '🥛 適合做奶茶',
-        ids: ['hk-milk-tea-50', 'hk-milk-tea-6g', 'golden-assam', 'ceylon-tea', 'earl-grey', 'french-earl-grey',
-              'matcha-latte', 'matcha-iced']
+        ids: ['hk-milk-tea-50', 'hk-milk-tea-6g', 'traditional-black-tea-50', 'traditional-black-tea-24',
+              'ceylon-tea', 'earl-grey']
     }
 ];
 
