@@ -130,6 +130,7 @@ const products = {
                 tips: [
                     '斯里蘭卡紅茶以佛手柑調味，花香與茶香融合',
                     '可回沖 2～3 次，熱泡更能帶出佛手柑清香',
+                    '冷泡清爽宜人，夏天也好喝',
                     '精品盒裝，送禮自用皆宜'
                 ]
             }
@@ -700,6 +701,27 @@ const products = {
     ]
 };
 
+// 跨分類篩選標籤（只標官方文案或泡法有明確寫到的品項）
+const filters = [
+    {
+        key: 'cold',
+        label: '❄️ 冷泡推薦',
+        ids: ['milky-jinxuan', 'four-seasons', 'osmanthus-oolong-3g', 'french-earl-grey', 'strawberry-black-tea',
+              'tropical-fruit', 'chamomile-orange-blossom', 'honey-black-tea', 'peach-oolong', 'jasmine-green-tea', 'earl-grey']
+    },
+    {
+        key: 'decaf',
+        label: '🌙 無咖啡因',
+        ids: ['chamomile-orange-blossom']
+    },
+    {
+        key: 'milk',
+        label: '🥛 適合做奶茶',
+        ids: ['hk-milk-tea-50', 'hk-milk-tea-6g', 'golden-assam', 'ceylon-tea', 'earl-grey', 'french-earl-grey',
+              'matcha-latte', 'matcha-iced']
+    }
+];
+
 // 沒有產品圖時顯示茶杯佔位圖
 const productImage = (product, className) => product.icon
     ? `<img class="${className}" src="${product.icon}" alt="${product.name}" loading="lazy">`
@@ -715,6 +737,8 @@ const findProduct = (id) => {
 
 // DOM Elements
 const categoryButtons = document.getElementById('categoryButtons');
+const filterChips = document.getElementById('filterChips');
+const productHeading = document.getElementById('productHeading');
 const productGrid = document.getElementById('productGrid');
 const modal = document.getElementById('brewingModal');
 const closeModalBtn = document.getElementById('closeModal');
@@ -732,6 +756,7 @@ const timerHint = document.getElementById('timerHint');
 const buyBtn = document.getElementById('buyBtn');
 
 let currentCategory = '24';
+let currentFilter = null;
 let currentProduct = null;
 let timerInterval = null;
 let timerSeconds = 0;
@@ -769,6 +794,7 @@ function unlockAudio() {
 // Initialize
 function init() {
     renderCategories();
+    renderFilters();
     renderProducts();
     setupEventListeners();
     openFromHash();
@@ -891,23 +917,56 @@ function renderCategories() {
     `).join('');
 }
 
-function selectCategory(key) {
-    currentCategory = key;
+function highlightCategory() {
     categoryButtons.querySelectorAll('.size-btn').forEach(btn => {
-        const active = btn.dataset.category === key;
+        const active = !currentFilter && btn.dataset.category === currentCategory;
         btn.classList.toggle('active', active);
         btn.setAttribute('aria-selected', active);
     });
+}
+
+function selectCategory(key) {
+    currentCategory = key;
+    currentFilter = null;
+    highlightCategory();
+    renderFilters();
     renderProducts();
+}
+
+// Render filter chips
+function renderFilters() {
+    filterChips.innerHTML = filters.map(f => `
+        <button class="filter-chip ${f.key === currentFilter ? 'active' : ''}" data-filter="${f.key}" aria-pressed="${f.key === currentFilter}">
+            ${f.label}
+        </button>
+    `).join('');
+}
+
+// 點同一個標籤再點一次就取消篩選，回到原本分類
+function selectFilter(key) {
+    currentFilter = currentFilter === key ? null : key;
+    highlightCategory();
+    renderFilters();
+    renderProducts();
+}
+
+function visibleProducts() {
+    if (!currentFilter) return products[currentCategory];
+    const filter = filters.find(f => f.key === currentFilter);
+    return Object.values(products).flat().filter(p => filter.ids.includes(p.id));
 }
 
 // Render products for current category
 function renderProducts() {
-    productGrid.innerHTML = products[currentCategory].map(product => `
+    const list = visibleProducts();
+    const filter = filters.find(f => f.key === currentFilter);
+    productHeading.textContent = filter ? `${filter.label}（${list.length} 款）` : '選擇茶品';
+
+    productGrid.innerHTML = list.map(product => `
         <button class="product-card" data-id="${product.id}">
             ${productImage(product, 'product-img')}
             <div class="product-name">${product.name}</div>
-            <div class="product-desc">${product.desc}</div>
+            <div class="product-desc">${filter ? product.spec : product.desc}</div>
             ${product.brewTime ? `<div class="product-time">⏱ ${formatDuration(product.brewTime)}</div>` : ''}
         </button>
     `).join('');
@@ -1091,9 +1150,14 @@ function openFromHash() {
         selectCategory(id);
         return;
     }
+    if (filters.some(f => f.key === id)) {
+        if (currentFilter !== id) selectFilter(id);
+        return;
+    }
     const found = findProduct(id);
     if (!found) return;
-    selectCategory(found.key);
+    const inFilter = currentFilter && filters.find(f => f.key === currentFilter).ids.includes(id);
+    if (!inFilter && found.key !== currentCategory) selectCategory(found.key);
     showBrewing(found.product);
 }
 
@@ -1102,6 +1166,11 @@ function setupEventListeners() {
     categoryButtons.addEventListener('click', (e) => {
         const btn = e.target.closest('.size-btn');
         if (btn) selectCategory(btn.dataset.category);
+    });
+
+    filterChips.addEventListener('click', (e) => {
+        const chip = e.target.closest('.filter-chip');
+        if (chip) selectFilter(chip.dataset.filter);
     });
 
     productGrid.addEventListener('click', (e) => {

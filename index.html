@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20261015">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#2D5016">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,7 +39,10 @@
 
         <!-- Product Grid -->
         <section class="product-section">
-            <h2>選擇茶品</h2>
+            <div class="filter-chips" id="filterChips" aria-label="篩選">
+                <!-- Filters will be injected by JS -->
+            </div>
+            <h2 id="productHeading">選擇茶品</h2>
             <div class="product-grid" id="productGrid">
                 <!-- Products will be injected by JS -->
             </div>
@@ -106,6 +109,6 @@
         </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=20261015"></script>
 </body>
 </html>

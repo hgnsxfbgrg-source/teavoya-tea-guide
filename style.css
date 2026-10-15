@@ -625,3 +625,39 @@ body {
     background: white;
     font-size: 56px;
 }
+
+/* Filter Chips */
+.filter-chips {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filter-chip {
+    font-family: inherit;
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1.5px solid rgba(45, 80, 22, 0.25);
+    background: var(--bg-card);
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+    border-color: var(--primary);
+}
+
+.filter-chip.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.filter-chip:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
