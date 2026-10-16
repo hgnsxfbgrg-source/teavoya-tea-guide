@@ -1,7 +1,7 @@
 // Teavoya Tea Guide Service Worker
 // 離線快取 + 背景通知
 
-const CACHE_NAME = 'teavoya-tea-guide-v5';
+const CACHE_NAME = 'teavoya-tea-guide-v6';
 
 // 網頁本體：安裝時先存起來
 const APP_SHELL = [
