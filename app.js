@@ -503,10 +503,10 @@ const products = {
             id: 'golden-assam',
             name: '金穗阿薩姆紅茶',
             spec: '24g × 25 包・免濾茶包',
-            icon: 'images/golden-assam.jpg', // TODO: 官網上架後補購買連結
+            icon: 'images/golden-assam.jpg',
             desc: '麥芽香氣・濃郁醇厚',
             brewTime: 600, // 10 分鐘（依包裝建議）
-            buyUrl: null,
+            buyUrl: SHOP + 'golden-assam-black-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '將水煮沸', highlight: '95°C' },
