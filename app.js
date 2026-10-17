@@ -22,7 +22,7 @@ const categories = [
     { key: 'cup', number: '杯泡', label: '2–6g 小茶包' },
     { key: '24', number: '24g', label: '中茶包・壺泡' },
     { key: '50', number: '50g', label: '業務用・鍋煮' },
-    { key: 'matcha', number: '抹茶', label: '京都抹茶・碧帆' }
+    { key: 'matcha', number: '抹茶', label: '日本抹茶粉' }
 ];
 
 const products = {
