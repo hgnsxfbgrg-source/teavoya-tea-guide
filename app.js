@@ -22,7 +22,7 @@ const categories = [
     { key: 'cup', number: '杯泡', label: '2–6g 小茶包' },
     { key: '24', number: '24g', label: '中茶包・壺泡' },
     { key: '50', number: '50g', label: '業務用・鍋煮' },
-    { key: 'matcha', number: '抹茶', label: '京都抹茶粉' }
+    { key: 'matcha', number: '抹茶', label: '京都抹茶・碧帆' }
 ];
 
 const products = {
@@ -707,6 +707,28 @@ const products = {
                     '刷好後趁泡沫綿密時飲用'
                 ]
             }
+        },
+        {
+            id: 'hekihan-usucha',
+            name: '碧帆 茶道級抹茶',
+            spec: '鹿兒島霧島・30g 罐',
+            icon: img('IMG-3679.jpg?v=1792074497'),
+            desc: '石臼挽・薄茶點茶',
+            brewTime: 15,
+            buyUrl: SHOP + '%E7%A2%A7%E5%B8%86-%E8%8C%B6%E9%81%93%E7%B4%9A%E6%8A%B9%E8%8C%B6-30g%E7%BD%90',
+            brewing: {
+                steps: [
+                    { title: '溫碗', detail: '茶碗以熱水溫過，倒掉後拭乾' },
+                    { title: '篩入抹茶', detail: '用抹茶篩篩入碗中', highlight: '2g' },
+                    { title: '注入熱水', detail: '水溫太高會帶出苦味', highlight: '60ml・80°C' },
+                    { title: '點茶', detail: '以茶筅前後輕快刷動至表面細沫均勻', highlight: '15 秒', isTimerStep: true }
+                ],
+                tips: [
+                    '覆下栽培一番茶，花崗岩石臼慢挽，一小時僅約 30 公克',
+                    '茶道級抹茶，建議直接點茶飲用，不建議調拿鐵或烘焙',
+                    '一罐約可點 15 碗薄茶；開封後密封冷藏，一個月內飲用'
+                ]
+            }
         }
     ]
 };
@@ -1132,7 +1154,7 @@ function showBrewing(product) {
 
     promoNote.hidden = !(PROMO && product.buyUrl);
     if (product.buyUrl) {
-        buyBtn.href = shopLink(new URL(product.buyUrl).pathname);
+        buyBtn.href = shopLink(decodeURIComponent(new URL(product.buyUrl).pathname));
         buyBtn.style.display = 'inline-flex';
     } else {
         buyBtn.style.display = 'none';
