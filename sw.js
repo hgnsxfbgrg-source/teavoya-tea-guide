@@ -1,7 +1,7 @@
 // Teavoya Tea Guide Service Worker
 // 離線快取 + 背景通知
 
-const CACHE_NAME = 'teavoya-tea-guide-v11';
+const CACHE_NAME = 'teavoya-tea-guide-v12';
 
 // 網頁本體：安裝時先存起來
 const APP_SHELL = [
@@ -10,7 +10,7 @@ const APP_SHELL = [
     'app.js',
     'style.css',
     'manifest.json',
-    'images/teavoya-logo-reverse.png'
+    'images/teavoya-logo-on-green.svg'
 ];
 
 // 網路太慢時，最多等幾毫秒就改用快取（廚房收訊差也能秒開）

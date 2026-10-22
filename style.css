@@ -6,11 +6,11 @@
 }
 
 :root {
-    --primary: #2D5016;
-    --primary-deep: #1F3B1A;
-    --primary-soft: #E7EEDF;
-    --gold: #B8893E;
-    --gold-soft: #F3E6CC;
+    --primary: #00633B;
+    --primary-deep: #004A2C;
+    --primary-soft: #E2EFE7;
+    --gold: #F9BC00;
+    --gold-soft: #FDF0C7;
     --bg: #FAF6EE;
     --paper: #FFFDF8;
     --card: #FFFFFF;
@@ -46,8 +46,8 @@ body {
 .header {
     position: relative;
     background:
-        radial-gradient(ellipse at 85% 0%, rgba(184, 137, 62, 0.22) 0%, transparent 55%),
-        linear-gradient(160deg, #2F5A22 0%, var(--primary-deep) 100%);
+        radial-gradient(ellipse at 85% 0%, rgba(255, 255, 255, 0.10) 0%, transparent 55%),
+        linear-gradient(160deg, #00703F 0%, var(--primary-deep) 100%);
     color: #FFFDF8;
     padding: 22px 24px 54px;
     text-align: center;
@@ -64,7 +64,7 @@ body {
 
 .header-logo {
     display: block;
-    width: 86px;
+    width: 96px;
     height: auto;
 }
 
@@ -86,7 +86,7 @@ body {
     font-style: italic;
     font-size: 15px;
     letter-spacing: 3px;
-    color: #E9D3A6;
+    color: #F9BC00;
 }
 
 .title {
@@ -176,7 +176,7 @@ body {
 .size-btn.active {
     border-color: var(--primary);
     background: var(--primary);
-    box-shadow: 0 8px 22px rgba(45, 80, 22, 0.25);
+    box-shadow: 0 8px 22px rgba(0, 99, 59, 0.25);
 }
 
 .size-number {
@@ -393,8 +393,8 @@ body {
 
 .modal-header {
     background:
-        radial-gradient(ellipse at 85% 0%, rgba(184, 137, 62, 0.22) 0%, transparent 55%),
-        linear-gradient(160deg, #2F5A22 0%, var(--primary-deep) 100%);
+        radial-gradient(ellipse at 85% 0%, rgba(255, 255, 255, 0.10) 0%, transparent 55%),
+        linear-gradient(160deg, #00703F 0%, var(--primary-deep) 100%);
     color: #FFFDF8;
     padding: 34px 24px 26px;
     text-align: center;
@@ -491,7 +491,7 @@ body {
 .step-highlight {
     display: inline-block;
     background: var(--gold-soft);
-    color: #6B4A1F;
+    color: #6B4E00;
     padding: 3px 12px;
     border-radius: 20px;
     font-weight: 600;
@@ -581,12 +581,12 @@ body {
 .buy-btn {
     background: var(--primary);
     color: #FFFDF8;
-    box-shadow: 0 6px 16px rgba(45, 80, 22, 0.28);
+    box-shadow: 0 6px 16px rgba(0, 99, 59, 0.28);
 }
 
 .buy-btn:hover {
     transform: translateY(-1px);
-    background: #36611B;
+    background: #007346;
 }
 
 .line-btn {
@@ -604,8 +604,8 @@ body {
 .timer-section {
     padding: 26px 24px 30px;
     background:
-        radial-gradient(ellipse at 15% 100%, rgba(184, 137, 62, 0.18) 0%, transparent 55%),
-        linear-gradient(160deg, #2F5A22 0%, var(--primary-deep) 100%);
+        radial-gradient(ellipse at 15% 100%, rgba(255, 255, 255, 0.08) 0%, transparent 55%),
+        linear-gradient(160deg, #00703F 0%, var(--primary-deep) 100%);
     text-align: center;
 }
 
@@ -614,7 +614,7 @@ body {
     font-style: italic;
     font-size: 14px;
     letter-spacing: 2px;
-    color: #E9D3A6;
+    color: #F9BC00;
     margin-bottom: 10px;
 }
 
@@ -644,7 +644,7 @@ body {
 
 .ring-fg {
     fill: none;
-    stroke: #E9D3A6;
+    stroke: #F9BC00;
     stroke-width: 5;
     stroke-linecap: round;
     transition: stroke-dashoffset 0.3s linear, stroke 0.3s ease;
@@ -707,7 +707,7 @@ body {
 }
 
 .timer-start.running {
-    background: #E9D3A6;
+    background: #F9BC00;
     color: #4A3415;
 }
 
@@ -959,5 +959,5 @@ body {
 }
 
 .promo-copy.copied {
-    background: #4A7C3A;
+    background: #2E8A5F;
 }

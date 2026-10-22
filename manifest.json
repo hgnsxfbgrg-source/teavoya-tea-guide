@@ -4,8 +4,8 @@
   "description": "Teavoya 嘉柏茶業專屬泡茶指南",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#F9F7F4",
-  "theme_color": "#2D5016",
+  "background_color": "#FAF6EE",
+  "theme_color": "#004A2C",
   "orientation": "portrait",
   "icons": [
     {
