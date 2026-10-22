@@ -1,7 +1,7 @@
 // Teavoya Tea Guide Service Worker
 // 離線快取 + 背景通知
 
-const CACHE_NAME = 'teavoya-tea-guide-v9';
+const CACHE_NAME = 'teavoya-tea-guide-v10';
 
 // 網頁本體：安裝時先存起來
 const APP_SHELL = [
@@ -18,7 +18,7 @@ const NETWORK_TIMEOUT = 3000;
 // Install event
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL))
+        caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL.map(url => new Request(url, { cache: 'no-cache' }))))
     );
     self.skipWaiting();
 });
@@ -35,7 +35,8 @@ self.addEventListener('activate', (event) => {
 // 網頁本體：先抓網路（拿到最新版），太慢或離線就用快取
 async function networkFirst(request) {
     const cache = await caches.open(CACHE_NAME);
-    const network = fetch(request).then(response => {
+    // no-cache：每次都跟伺服器確認，避免瀏覽器快取給到舊版
+    const network = fetch(request.url, { cache: 'no-cache' }).then(response => {
         if (response.ok) cache.put(request, response.clone());
         return response;
     });
