@@ -1030,10 +1030,10 @@ function renderProducts() {
 
     productGrid.innerHTML = list.map(product => `
         <button class="product-card" data-id="${product.id}">
-            ${productImage(product, 'product-img')}
+            <div class="product-thumb">${productImage(product, 'product-img')}</div>
             <div class="product-name">${product.name}</div>
             <div class="product-desc">${filter ? product.spec : product.desc}</div>
-            ${product.brewTime ? `<div class="product-time">⏱ ${formatDuration(product.brewTime)}</div>` : ''}
+            ${product.brewTime ? `<div class="product-time">${formatDuration(product.brewTime)}</div>` : ''}
         </button>
     `).join('');
 }
@@ -1052,6 +1052,13 @@ function formatDuration(seconds) {
 // Update timer display
 function updateTimerDisplay() {
     timerDisplay.textContent = formatTime(timerSeconds);
+    const ring = document.getElementById('timerRing');
+    if (ring) {
+        const c = 2 * Math.PI * 54;
+        const frac = originalTimerSeconds > 0 ? timerSeconds / originalTimerSeconds : 1;
+        ring.style.strokeDasharray = c;
+        ring.style.strokeDashoffset = c * (1 - frac);
+    }
 
     // Visual feedback when time is running low
     if (isTimerRunning && timerSeconds <= 10 && timerSeconds > 0) {

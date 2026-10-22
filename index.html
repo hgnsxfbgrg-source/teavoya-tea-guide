@@ -10,10 +10,10 @@
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20261017b">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=20261022a">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2D5016">
+    <meta name="theme-color" content="#1F3B1A">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍵</text></svg>">
@@ -22,11 +22,14 @@
     <div class="app">
         <!-- Header -->
         <header class="header">
-            <div class="logo">
+            <div class="header-top">
                 <span class="logo-text">TEAVOYA</span>
                 <span class="logo-subtext">嘉柏茶業</span>
             </div>
+            <p class="eyebrow">Brewing Guide</p>
             <h1 class="title">泡茶指南</h1>
+            <p class="header-sub">水溫・水量・時間，一次泡對</p>
+            <svg class="header-wave" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 C70 4 140 4 200 20 S330 38 400 16 L400 40 L0 40Z"/></svg>
         </header>
 
         <!-- Promo Code -->
@@ -41,7 +44,7 @@
 
         <!-- Category Selector -->
         <section class="size-selector">
-            <h2>選擇茶包類型</h2>
+            <h2 class="section-title"><span>選擇茶包類型</span><em>Category</em></h2>
             <div class="size-buttons" id="categoryButtons" role="tablist">
                 <!-- Categories will be injected by JS -->
             </div>
@@ -52,7 +55,7 @@
             <div class="filter-chips" id="filterChips" aria-label="篩選">
                 <!-- Filters will be injected by JS -->
             </div>
-            <h2 id="productHeading">選擇茶品</h2>
+            <h2 class="section-title"><span id="productHeading">選擇茶品</span><em>Teas</em></h2>
             <div class="product-grid" id="productGrid">
                 <!-- Products will be injected by JS -->
             </div>
@@ -60,7 +63,8 @@
 
         <!-- Brewing Guide Modal -->
         <div class="modal" id="brewingModal">
-            <div class="modal-content">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                <div class="sheet-handle" aria-hidden="true"></div>
                 <button class="modal-close" id="closeModal" aria-label="關閉">&times;</button>
                 <div class="modal-header">
                     <div class="tea-icon" id="modalIcon">🍵</div>
@@ -77,17 +81,18 @@
                 <!-- Action Buttons -->
                 <p class="promo-note" id="promoNote" hidden></p>
                 <div class="action-buttons">
-                    <a href="#" id="buyBtn" class="action-btn buy-btn" target="_blank" rel="noopener">
-                        🛒 立即購買
-                    </a>
-                    <a href="https://line.me/R/ti/p/@teavoya" class="action-btn line-btn" target="_blank" rel="noopener">
-                        💬 LINE 諮詢
-                    </a>
+                    <a href="#" id="buyBtn" class="action-btn buy-btn" target="_blank" rel="noopener">前往購買</a>
+                    <a href="https://line.me/R/ti/p/@teavoya" class="action-btn line-btn" target="_blank" rel="noopener">LINE 諮詢</a>
                 </div>
                 
                 <!-- Timer Section -->
                 <div class="timer-section" id="timerSection">
+                    <p class="timer-label">Timer・計時器</p>
                     <div class="timer-display">
+                        <svg class="timer-ring" viewBox="0 0 120 120" aria-hidden="true">
+                            <circle class="ring-bg" cx="60" cy="60" r="54"/>
+                            <circle class="ring-fg" id="timerRing" cx="60" cy="60" r="54"/>
+                        </svg>
                         <span class="timer-time" id="timerDisplay">00:00</span>
                     </div>
                     <div class="timer-controls">
@@ -120,6 +125,6 @@
         </footer>
     </div>
 
-    <script src="app.js?v=20261017b"></script>
+    <script src="app.js?v=20261022a"></script>
 </body>
 </html>
