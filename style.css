@@ -56,10 +56,16 @@ body {
 
 .header-top {
     display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 26px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.header-logo {
+    display: block;
+    width: 86px;
+    height: auto;
 }
 
 .logo-text {
