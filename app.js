@@ -33,14 +33,14 @@ const products = {
             spec: '3g × 20 包・三角立體茶包',
             icon: img('Teavoya_f04b56a0-5a6f-4d37-82f5-19892c48f1bf.jpg?v=1771930956'),
             desc: '溫潤炭香・烘焙果韻',
-            brewTime: 180,
+            brewTime: 300,
             buyUrl: SHOP + 'charcoal-tieguanyin-oolong',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '焙火茶適合高溫沖泡', highlight: '100°C' },
                     { title: '放入茶包', detail: '將 1 包 3g 茶包放入馬克杯' },
                     { title: '注入熱水', detail: '倒入熱水', highlight: '300ml' },
-                    { title: '浸泡', detail: '靜置等待', highlight: '3 分鐘', isTimerStep: true },
+                    { title: '浸泡', detail: '靜置等待', highlight: '5 分鐘', isTimerStep: true },
                     { title: '取出茶包', detail: '茶包可保留回沖' }
                 ],
                 tips: [
@@ -205,7 +205,7 @@ const products = {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '100°C' },
                     { title: '放入茶包', detail: '將 1 包 6g 茶包放入杯中' },
-                    { title: '注入熱水', detail: '倒入熱水', highlight: '400ml' },
+                    { title: '注入熱水', detail: '倒入熱水', highlight: '500-600ml' },
                     { title: '浸泡', detail: '靜置等待', highlight: '3 分鐘', isTimerStep: true },
                     { title: '回沖', detail: '茶包留著，續水再泡' }
                 ],
@@ -228,7 +228,7 @@ const products = {
                 steps: [
                     { title: '準備熱水', detail: '使用熱水沖泡', highlight: '95°C' },
                     { title: '放入茶包', detail: '將 1 包 6g 茶包放入杯中' },
-                    { title: '注入熱水', detail: '倒入熱水', highlight: '400ml' },
+                    { title: '注入熱水', detail: '倒入熱水', highlight: '500-600ml' },
                     { title: '浸泡', detail: '靜置等待', highlight: '5 分鐘', isTimerStep: true },
                     { title: '享用', detail: '可加冰塊做成冰果茶' }
                 ],
@@ -273,14 +273,14 @@ const products = {
             spec: '24g × 25 包・免濾茶包',
             icon: img('NO.19.png?v=1773273503'),
             desc: '蜜香馥郁・甘甜滑順',
-            brewTime: 300, // 5 分鐘
+            brewTime: 480, // 8 分鐘
             buyUrl: SHOP + 'honey-black-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺或杯中' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置等待', highlight: '5 分鐘', isTimerStep: true },
+                    { title: '悶泡', detail: '蓋上蓋子靜置等待', highlight: '8 分鐘', isTimerStep: true },
                     { title: '取出茶包', detail: '輕輕取出，避免擠壓' }
                 ],
                 tips: [
@@ -319,14 +319,14 @@ const products = {
             spec: '24g × 25 包・免濾茶包',
             icon: img('NO.18.png?v=1773273011'),
             desc: '肉桂香氣・薄荷尾韻',
-            brewTime: 300, // 5 分鐘
+            brewTime: 480, // 8 分鐘
             buyUrl: SHOP + 'ruby-black-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '5 分鐘', isTimerStep: true },
+                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '8 分鐘', isTimerStep: true },
                     { title: '享用', detail: '感受紅玉獨特風味' }
                 ],
                 tips: [
@@ -366,14 +366,14 @@ const products = {
             spec: '24g × 25 包・免濾茶包',
             icon: img('NO.07.png?v=1773273063'),
             desc: '錫蘭紅茶・藍莓果香',
-            brewTime: 300,
+            brewTime: 480,
             buyUrl: SHOP + 'blueberry-black-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
                     { title: '注入熱水', detail: '每包約可泡 1,500cc', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '5 分鐘', isTimerStep: true },
+                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '8 分鐘', isTimerStep: true },
                     { title: '取出茶包', detail: '輕輕取出，避免擠壓' }
                 ],
                 tips: [
@@ -389,14 +389,14 @@ const products = {
             spec: '24g × 25 包・免濾茶包',
             icon: img('oolong-tea-bag-main-white.jpg?v=1792534764'),
             desc: '清香馥郁・回甘悠長',
-            brewTime: 360, // 6 分鐘
+            brewTime: 480, // 8 分鐘
             buyUrl: SHOP + 'oolong-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '6 分鐘', isTimerStep: true },
+                    { title: '悶泡', detail: '蓋上蓋子靜置（8～10 分鐘）', highlight: '8 分鐘', isTimerStep: true },
                     { title: '品茗', detail: '感受多層次茶韻' }
                 ],
                 tips: [
@@ -412,14 +412,14 @@ const products = {
             spec: '24g × 25 包・免濾茶包',
             icon: img('ca84363c1df45a1fcbb4150fdb4b2013.png?v=1775873356'),
             desc: '茉莉花香・清新淡雅',
-            brewTime: 600, // 10 分鐘
+            brewTime: 480, // 8 分鐘
             buyUrl: SHOP + 'jasmine-green-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '水溫不宜過高，以免苦澀', highlight: '85°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入容器' },
                     { title: '注入熱水', detail: '按茶水比例 1:60', highlight: '1500ml' },
-                    { title: '悶泡', detail: '上蓋悶泡', highlight: '10 分鐘', isTimerStep: true },
+                    { title: '悶泡', detail: '上蓋悶泡', highlight: '8 分鐘', isTimerStep: true },
                     { title: '調味', detail: '待冷卻後可加入冰糖調配' }
                 ],
                 tips: [
@@ -436,14 +436,14 @@ const products = {
             spec: '24g × 25 包・免濾茶包',
             icon: img('NO.09.png?v=1773273473'),
             desc: '花香淡雅・斯里蘭卡精選',
-            brewTime: 300, // 5 分鐘
+            brewTime: 480, // 8 分鐘
             buyUrl: SHOP + 'ceylon-black-tea-bag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '100°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '5 分鐘', isTimerStep: true },
+                    { title: '悶泡', detail: '蓋上蓋子靜置（8～10 分鐘）', highlight: '8 分鐘', isTimerStep: true },
                     { title: '享用', detail: '可純飲或加檸檬' }
                 ],
                 tips: [
@@ -459,14 +459,14 @@ const products = {
             spec: '24g × 25 包・免濾茶包',
             icon: img('NO.08.png?v=1773273251'),
             desc: '桂花清香・烏龍茶韻',
-            brewTime: 360, // 6 分鐘
+            brewTime: 480, // 8 分鐘
             buyUrl: SHOP + 'osmanthus-oolong-teabag',
             brewing: {
                 steps: [
                     { title: '準備熱水', detail: '將水煮沸後沖泡', highlight: '95°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
-                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '6 分鐘', isTimerStep: true },
+                    { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '8 分鐘', isTimerStep: true },
                     { title: '品茗', detail: '感受桂花烏龍香氣' }
                 ],
                 tips: [
