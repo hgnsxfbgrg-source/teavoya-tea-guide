@@ -187,7 +187,7 @@ const products = {
                     { title: '加入淡奶', detail: '加淡奶與糖，依喜好調整', highlight: '40-60ml' }
                 ],
                 tips: [
-                    '港式奶茶迷你版，一個人也能享受道地港奶',
+                    '港式奶茶迷你版，一個人也能喝港奶',
                     '想要更濃，可減少水量或延長悶泡時間',
                     '居家、辦公室隨時來一杯'
                 ]
@@ -235,7 +235,7 @@ const products = {
                 tips: [
                     '多種熱帶水果風味混搭，茶湯繽紛酸甜',
                     '冷泡後果香更鮮明（推薦）',
-                    '加氣泡水就是派對飲品，大人小孩都喜歡',
+                    '加氣泡水就是派對飲品',
                     '無咖啡因，晚上也能喝'
                 ],
                 cold: '1 包加 500ml 冷水，放冰箱冷泡 6～8 小時；喝前可兌氣泡水'
@@ -284,7 +284,7 @@ const products = {
                     { title: '取出茶包', detail: '輕輕取出，避免擠壓' }
                 ],
                 tips: [
-                    '小綠葉蟬吸食後的茶菁，帶有自然蜜香與果香',
+                    '小綠葉蟬吸食後的茶菁，帶有蜜香與果香',
                     '茶湯色澤鮮紅透亮，口感滑順不苦不澀',
                     '熱飲香氣濃郁，冷泡後蜜香更為醇和'
                 ]
@@ -307,7 +307,7 @@ const products = {
                     { title: '品茗', detail: '感受普洱獨特陳香' }
                 ],
                 tips: [
-                    '嚴選雲南古樹熟普洱，茶湯色澤深邃',
+                    '雲南古樹熟普洱，茶湯色澤深邃',
                     '經人工發酵工序，溫潤茶感',
                     '可多次沖泡，茶香隨時間更圓潤'
                 ]
@@ -330,7 +330,7 @@ const products = {
                     { title: '享用', detail: '感受紅玉獨特風味' }
                 ],
                 tips: [
-                    '台灣在地優質紅玉茶葉',
+                    '台灣在地紅玉茶葉',
                     '淡雅肉桂香氣，柔和薄荷尾韻',
                     '茶感順口，冷熱皆宜'
                 ]
@@ -353,8 +353,8 @@ const products = {
                     { title: '完成', detail: '可熱飲或冰鎮享用' }
                 ],
                 tips: [
-                    '台灣烏龍茶與白桃香氣完美結合',
-                    '甜美清新，香甜解膩，完美消暑',
+                    '台灣烏龍茶搭配白桃香氣',
+                    '甜美清新，冰飲清爽消暑',
                     '冷泡、熱水鍋煮皆宜，也適合果茶調飲'
                 ],
                 cold: '1 包加 1500ml 冷水，放冰箱冷泡 8～10 小時'
@@ -424,7 +424,7 @@ const products = {
                 ],
                 tips: [
                     '改良版茶包，茉莉花增量 25%',
-                    '優質綠茶葉與茉莉花瓣，真材實料',
+                    '綠茶葉搭配茉莉花瓣',
                     '推薦「冷泡」，茶味更清新'
                 ],
                 cold: '1 包加 1500ml 冷水，放冰箱冷泡 8～10 小時'
@@ -470,7 +470,7 @@ const products = {
                     { title: '品茗', detail: '感受桂花烏龍香氣' }
                 ],
                 tips: [
-                    '高品質台灣烏龍茶葉與新鮮桂花',
+                    '台灣烏龍茶葉與新鮮桂花',
                     '冷熱皆宜，四季皆可享用',
                     '可用於泡茶、煮茶飯、烤肉增添風味'
                 ]
@@ -562,7 +562,7 @@ const products = {
                 ],
                 tips: [
                     '經典台式冰紅茶配方，茶湯紅亮寶石色',
-                    '加糖加冰就是道地早餐店紅茶',
+                    '加糖加冰就是早餐店風味紅茶',
                     '需要大量沖泡，可選 50g 業務用版本'
                 ]
             }
@@ -587,8 +587,8 @@ const products = {
                     { title: '加入淡奶', detail: '每杯 250ml 茶湯，加入淡奶', highlight: '50ml / 杯' }
                 ],
                 tips: [
-                    '撞奶不苦不澀，適合做道地港式奶茶',
-                    '斯里蘭卡＋爪哇優質紅茶調配',
+                    '撞奶不苦不澀，適合做港式奶茶',
+                    '斯里蘭卡＋爪哇紅茶調配',
                     'FOP、OP、BOP 專業分級，層次豐富',
                     '每杯茶底成本只要 $2.5'
                 ]
@@ -659,9 +659,9 @@ const products = {
                     { title: '加入鮮奶', detail: '倒入溫熱鮮奶', highlight: '150-200ml' }
                 ],
                 tips: [
-                    '京都產區遮光栽培，茶胺酸高、苦澀低、帶有旨味（鮮味）',
+                    '京都產區遮光栽培，帶有旨味（鮮味）',
                     '400 目超細研磨，溶解快、不沉底',
-                    '開封後夾緊袋口冷藏，2 個月內喝完風味最佳'
+                    '開封後夾緊袋口冷藏，2 個月內喝完風味較好'
                 ]
             }
         },
@@ -680,7 +680,7 @@ const products = {
                     { title: '加冷水或冷牛奶', detail: '依喜好選擇', highlight: '200ml' }
                 ],
                 tips: [
-                    '用「抹茶神器」搖 30 秒，泡沫最綿密',
+                    '用「抹茶神器」搖 30 秒，泡沫更綿密',
                     '加冷牛奶就是冰抹茶拿鐵',
                     '100g 約可沖 35～50 杯'
                 ]
@@ -793,6 +793,7 @@ const promoNote = document.getElementById('promoNote');
 let currentCategory = '24';
 let currentFilter = null;
 let currentProduct = null;
+let modalInHistory = false;
 let timerInterval = null;
 let timerSeconds = 0;
 let timerEndAt = 0;
@@ -1196,8 +1197,16 @@ function showBrewing(product) {
     updateTimerDisplay();
     timerHint.textContent = `建議浸泡 ${formatTime(originalTimerSeconds)}`;
 
-    if (location.hash !== `#${product.id}`) {
-        history.replaceState(null, '', `#${product.id}`);
+    // 開說明時多推一筆歷史紀錄，Android 按返回鍵只會關掉說明，不會離開指南
+    // 從 QR code 直接開到 #id 時，先把目前這筆換成列表，再推一筆說明
+    if (!modalInHistory) {
+        if (location.hash === `#${product.id}`) {
+            history.replaceState(null, '', location.pathname + location.search);
+        }
+        history.pushState({ modal: true }, '', `#${product.id}`);
+        modalInHistory = true;
+    } else if (location.hash !== `#${product.id}`) {
+        history.replaceState({ modal: true }, '', `#${product.id}`);
     }
 
     modal.classList.add('active');
@@ -1206,14 +1215,21 @@ function showBrewing(product) {
 }
 
 // Close modal
-function closeBrewing() {
+// fromHistory：使用者按了返回鍵，歷史紀錄已經退回列表
+function closeBrewing(fromHistory = false) {
     if (!modal.classList.contains('active')) return;
-    if (isTimerRunning && !confirm('計時中，確定要關閉嗎？')) return;
+    if (isTimerRunning && !confirm('計時中，確定要關閉嗎？')) {
+        if (fromHistory) history.pushState({ modal: true }, '', `#${currentProduct.id}`);
+        return;
+    }
 
     modal.classList.remove('active');
     document.body.style.overflow = '';
     stopTimer();
-    history.replaceState(null, '', location.pathname + location.search);
+    if (modalInHistory) {
+        modalInHistory = false;
+        if (!fromHistory) history.back();
+    }
 }
 
 // Open a product directly from the URL, e.g. .../#honey-black-tea (for package QR codes)
@@ -1254,7 +1270,7 @@ function setupEventListeners() {
         if (card) showBrewing(findProduct(card.dataset.id).product);
     });
 
-    closeModalBtn.addEventListener('click', closeBrewing);
+    closeModalBtn.addEventListener('click', () => closeBrewing());
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeBrewing();
     });
@@ -1274,6 +1290,9 @@ function setupEventListeners() {
     timerPause.addEventListener('click', pauseTimer);
     timerReset.addEventListener('click', resetTimer);
 
+    window.addEventListener('popstate', () => {
+        if (modalInHistory && !history.state?.modal) closeBrewing(true);
+    });
     window.addEventListener('hashchange', openFromHash);
 
     // Catch up immediately when returning to the tab
