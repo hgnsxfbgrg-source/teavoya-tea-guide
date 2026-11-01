@@ -37,7 +37,7 @@ const products = {
             buyUrl: SHOP + 'charcoal-tieguanyin-oolong',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '焙火茶適合高溫沖泡', highlight: '95-100°C' },
+                    { title: '準備熱水', detail: '焙火茶適合高溫沖泡', highlight: '100°C' },
                     { title: '放入茶包', detail: '將 1 包 3g 茶包放入馬克杯' },
                     { title: '注入熱水', detail: '倒入熱水', highlight: '300ml' },
                     { title: '浸泡', detail: '靜置等待', highlight: '3 分鐘', isTimerStep: true },
@@ -60,7 +60,7 @@ const products = {
             buyUrl: SHOP + 'milky-jinxuan-oolong',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '水溫略降，奶香更明顯', highlight: '85-90°C' },
+                    { title: '準備熱水', detail: '水溫要高，奶香更明顯', highlight: '95°C' },
                     { title: '放入茶包', detail: '將 1 包 3g 茶包放入馬克杯' },
                     { title: '注入熱水', detail: '倒入熱水', highlight: '300ml' },
                     { title: '浸泡', detail: '靜置等待', highlight: '3 分鐘', isTimerStep: true },
@@ -84,7 +84,7 @@ const products = {
             buyUrl: SHOP + 'taiwan-four-seasons-oolong',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
+                    { title: '準備熱水', detail: '將水煮沸後沖泡', highlight: '95°C' },
                     { title: '放入茶包', detail: '將 1 包 3g 茶包放入馬克杯' },
                     { title: '注入熱水', detail: '倒入熱水', highlight: '300ml' },
                     { title: '浸泡', detail: '靜置等待', highlight: '3 分鐘', isTimerStep: true },
@@ -108,7 +108,7 @@ const products = {
             buyUrl: SHOP + 'osmanthus-oolong-pyramid',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
+                    { title: '準備熱水', detail: '將水煮沸後沖泡', highlight: '95°C' },
                     { title: '放入茶包', detail: '將 1 包 3g 茶包放入馬克杯' },
                     { title: '注入熱水', detail: '倒入熱水', highlight: '300ml' },
                     { title: '浸泡', detail: '靜置等待', highlight: '3 分鐘', isTimerStep: true },
@@ -277,7 +277,7 @@ const products = {
             buyUrl: SHOP + 'honey-black-tea-bag',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '將水煮沸後稍微放涼', highlight: '90-95°C' },
+                    { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺或杯中' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
                     { title: '悶泡', detail: '蓋上蓋子靜置等待', highlight: '5 分鐘', isTimerStep: true },
@@ -346,7 +346,7 @@ const products = {
             buyUrl: SHOP + 'peach-oolong-tea-bag',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
+                    { title: '準備熱水', detail: '將水煮沸後沖泡', highlight: '95°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入容器' },
                     { title: '注入熱水', detail: '每包約可泡 1,500cc', highlight: '1500ml' },
                     { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '8 分鐘', isTimerStep: true },
@@ -393,7 +393,7 @@ const products = {
             buyUrl: SHOP + 'oolong-tea-bag',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
+                    { title: '準備熱水', detail: '使用剛煮沸的熱水', highlight: '95-100°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
                     { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '6 分鐘', isTimerStep: true },
@@ -416,7 +416,7 @@ const products = {
             buyUrl: SHOP + 'jasmine-green-tea-bag',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '綠茶適合較低水溫', highlight: '80°C' },
+                    { title: '準備熱水', detail: '水溫不宜過高，以免苦澀', highlight: '85°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入容器' },
                     { title: '注入熱水', detail: '按茶水比例 1:60', highlight: '1500ml' },
                     { title: '悶泡', detail: '上蓋悶泡', highlight: '10 分鐘', isTimerStep: true },
@@ -463,7 +463,7 @@ const products = {
             buyUrl: SHOP + 'osmanthus-oolong-teabag',
             brewing: {
                 steps: [
-                    { title: '準備熱水', detail: '水溫不宜過高', highlight: '85-90°C' },
+                    { title: '準備熱水', detail: '將水煮沸後沖泡', highlight: '95°C' },
                     { title: '放入茶包', detail: '將 24g 茶包放入茶壺' },
                     { title: '注入熱水', detail: '倒入適量熱水', highlight: '1500ml' },
                     { title: '悶泡', detail: '蓋上蓋子靜置', highlight: '6 分鐘', isTimerStep: true },
