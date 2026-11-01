@@ -102,7 +102,7 @@ const products = {
             id: 'osmanthus-oolong-3g',
             name: '桂花風味烏龍',
             spec: '3g × 15 包・三角立體茶包',
-            icon: img('Gemini_Generated_Image_race2prace2prace.png?v=1772889515'),
+            icon: img('osmanthus-oolong-pyramid-main-3g15.jpg?v=1792534764'),
             desc: '桂花清甜・烏龍回甘',
             brewTime: 180,
             buyUrl: SHOP + 'osmanthus-oolong-pyramid',
@@ -150,7 +150,7 @@ const products = {
             id: 'strawberry-black-tea',
             name: '草莓風味紅茶',
             spec: '3g × 15 包',
-            icon: img('Gemini_Generated_Image_jcqybkjcqybkjcqy.png?v=1772889391'),
+            icon: img('strawberry-black-tea-main-3g15.jpg?v=1792534764'),
             desc: '草莓香甜・紅茶回甘',
             brewTime: 240,
             buyUrl: SHOP + 'strawberry-black-tea-bag',
@@ -197,7 +197,7 @@ const products = {
             id: 'puerh-6g',
             name: '雲南輕熟普洱',
             spec: '6g × 15 包・三角立體茶包',
-            icon: img('Gemini_Generated_Image_vt2uxxvt2uxxvt2u.png?v=1771632006'),
+            icon: img('yunnan-puerh-small-main.jpg?v=1792534764'),
             desc: '陳香溫潤・可回沖五次',
             brewTime: 180,
             buyUrl: SHOP + 'yunnan-puerh-tea-bag-small',
@@ -387,7 +387,7 @@ const products = {
             id: 'oolong-tea',
             name: '清香烏龍茶',
             spec: '24g × 25 包・免濾茶包',
-            icon: img('background_removal_TUFIQTM0eWR0WVUjMSM2Y2FmMjhhNTNhMzRiYzBiNTFlMTQ3ZGQxNmEyZTRmMCM1MzY2IyNUUkFOU0ZPUk1BVElPTl9SRVFVRVNU.png?v=1772855803'),
+            icon: img('oolong-tea-bag-main-white.jpg?v=1792534764'),
             desc: '清香馥郁・回甘悠長',
             brewTime: 360, // 6 分鐘
             buyUrl: SHOP + 'oolong-tea-bag',
@@ -480,7 +480,7 @@ const products = {
             id: 'earl-grey',
             name: '伯爵紅茶',
             spec: '24g × 25 包・免濾茶包',
-            icon: img('background_removal_TUFIQTM3U09IUDQjMSM2Y2FmMjhhNTNhMzRiYzBiNTFlMTQ3ZGQxNmEyZTRmMCM1MzY2IyNUUkFOU0ZPUk1BVElPTl9SRVFVRVNU.png?v=1773273162'),
+            icon: img('earl-grey-tea-bag-main-white.jpg?v=1792534764'),
             desc: '佛手柑香・經典複合茶香',
             brewTime: 480, // 8 分鐘
             buyUrl: SHOP + 'earl-grey-tea-bag',
@@ -715,7 +715,7 @@ const products = {
             icon: img('IMG-3679.jpg?v=1792074497'),
             desc: '石臼挽・薄茶點茶',
             brewTime: 15,
-            buyUrl: SHOP + '%E7%A2%A7%E5%B8%86-%E8%8C%B6%E9%81%93%E7%B4%9A%E6%8A%B9%E8%8C%B6-30g%E7%BD%90',
+            buyUrl: SHOP + 'bifan-ceremonial-matcha-30g',
             brewing: {
                 steps: [
                     { title: '溫碗', detail: '茶碗以熱水溫過，倒掉後拭乾' },
@@ -770,6 +770,8 @@ const findProduct = (id) => {
 // DOM Elements
 const categoryButtons = document.getElementById('categoryButtons');
 const filterChips = document.getElementById('filterChips');
+const searchInput = document.getElementById('searchInput');
+const noResults = document.getElementById('noResults');
 const productHeading = document.getElementById('productHeading');
 const productGrid = document.getElementById('productGrid');
 const modal = document.getElementById('brewingModal');
@@ -792,6 +794,7 @@ const promoNote = document.getElementById('promoNote');
 
 let currentCategory = '24';
 let currentFilter = null;
+let searchQuery = '';
 let currentProduct = null;
 let modalInHistory = false;
 let timerInterval = null;
@@ -986,7 +989,7 @@ function renderCategories() {
 
 function highlightCategory() {
     categoryButtons.querySelectorAll('.size-btn').forEach(btn => {
-        const active = !currentFilter && btn.dataset.category === currentCategory;
+        const active = !currentFilter && !searchQuery && btn.dataset.category === currentCategory;
         btn.classList.toggle('active', active);
         btn.setAttribute('aria-selected', active);
     });
@@ -995,6 +998,7 @@ function highlightCategory() {
 function selectCategory(key) {
     currentCategory = key;
     currentFilter = null;
+    clearSearch();
     highlightCategory();
     renderFilters();
     renderProducts();
@@ -1012,12 +1016,26 @@ function renderFilters() {
 // 點同一個標籤再點一次就取消篩選，回到原本分類
 function selectFilter(key) {
     currentFilter = currentFilter === key ? null : key;
+    clearSearch();
     highlightCategory();
     renderFilters();
     renderProducts();
 }
 
+// 搜尋茶名、標語、規格、泡法與小技巧；空白分隔的每個字都要符合
+function matchesSearch(product) {
+    const text = [product.name, product.desc, product.spec, product.brewing.cold || '',
+        ...product.brewing.steps.map(s => `${s.title} ${s.detail}`), ...product.brewing.tips].join(' ').toLowerCase();
+    return searchQuery.toLowerCase().split(/\s+/).every(word => text.includes(word));
+}
+
+function clearSearch() {
+    searchQuery = '';
+    searchInput.value = '';
+}
+
 function visibleProducts() {
+    if (searchQuery) return Object.values(products).flat().filter(matchesSearch);
     if (!currentFilter) return products[currentCategory];
     const filter = filters.find(f => f.key === currentFilter);
     return Object.values(products).flat().filter(p => filter.ids.includes(p.id));
@@ -1027,13 +1045,17 @@ function visibleProducts() {
 function renderProducts() {
     const list = visibleProducts();
     const filter = filters.find(f => f.key === currentFilter);
-    productHeading.textContent = filter ? `${filter.label}（${list.length} 款）` : '選擇茶品';
+    productHeading.textContent = searchQuery
+        ? `搜尋「${searchQuery}」（${list.length} 款）`
+        : filter ? `${filter.label}（${list.length} 款）` : '選擇茶品';
+    noResults.hidden = list.length > 0;
+    const showSpec = filter || searchQuery;
 
     productGrid.innerHTML = list.map(product => `
         <button class="product-card" data-id="${product.id}">
             <div class="product-thumb">${productImage(product, 'product-img')}</div>
             <div class="product-name">${product.name}</div>
-            <div class="product-desc">${filter ? product.spec : product.desc}</div>
+            <div class="product-desc">${showSpec ? product.spec : product.desc}</div>
             ${product.brewTime ? `<div class="product-time">${formatDuration(product.brewTime)}</div>` : ''}
         </button>
     `).join('');
@@ -1259,6 +1281,17 @@ function setupEventListeners() {
     });
 
     promoCopy.addEventListener('click', copyPromoCode);
+
+    searchInput.addEventListener('input', () => {
+        searchQuery = searchInput.value.trim();
+        if (searchQuery) currentFilter = null;
+        highlightCategory();
+        renderFilters();
+        renderProducts();
+    });
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') searchInput.blur(); // 收起手機鍵盤，看得到結果
+    });
 
     filterChips.addEventListener('click', (e) => {
         const chip = e.target.closest('.filter-chip');

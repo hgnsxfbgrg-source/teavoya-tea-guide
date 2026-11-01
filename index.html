@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20261022c">
+    <link rel="stylesheet" href="style.css?v=20261101c">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#004A2C">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,6 +51,9 @@
 
         <!-- Product Grid -->
         <section class="product-section">
+            <div class="search-box">
+                <input type="search" id="searchInput" placeholder="搜尋茶名，例如：伯爵、烏龍、冷泡" aria-label="搜尋茶品" enterkeyhint="search" autocomplete="off">
+            </div>
             <div class="filter-chips" id="filterChips" aria-label="篩選">
                 <!-- Filters will be injected by JS -->
             </div>
@@ -58,6 +61,7 @@
             <div class="product-grid" id="productGrid">
                 <!-- Products will be injected by JS -->
             </div>
+            <p class="no-results" id="noResults" hidden>找不到符合的茶品，換個關鍵字試試</p>
         </section>
 
         <!-- Brewing Guide Modal -->
@@ -124,6 +128,6 @@
         </footer>
     </div>
 
-    <script src="app.js?v=20261101b"></script>
+    <script src="app.js?v=20261101c"></script>
 </body>
 </html>
