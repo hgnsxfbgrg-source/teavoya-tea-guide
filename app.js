@@ -623,7 +623,7 @@ const products = {
             name: '老麥紅茶',
             spec: '50g・15 / 50 包',
             icon: img('NO.11.png?v=1773273796'),
-            desc: '麥香濃郁・超高CP值',
+            desc: '麥香濃郁・適合鍋煮大量供應',
             brewTime: 900, // 15 分鐘
             buyUrl: SHOP + 'barley-black-tea-bag',
             brewing: {
@@ -637,7 +637,7 @@ const products = {
                 tips: [
                     '經焙火處理，麥香濃郁有層次',
                     '印度大葉種紅茶，醇厚順口',
-                    '無糖、不苦澀、自然回甘',
+                    '無糖、不苦澀、尾韻回甘',
                     '每杯茶底成本只要 $1.05'
                 ]
             }
