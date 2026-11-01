@@ -22,7 +22,7 @@ const categories = [
     { key: 'cup', number: '杯泡', label: '2–6g 小茶包' },
     { key: '24', number: '24g', label: '中茶包・壺泡' },
     { key: '50', number: '50g', label: '業務用・鍋煮' },
-    { key: 'matcha', number: '抹茶', label: '日本抹茶粉' }
+    { key: 'matcha', number: '抹茶・焙茶', label: '日本茶粉' }
 ];
 
 const products = {
@@ -675,7 +675,7 @@ const products = {
             brewing: {
                 steps: [
                     { title: '取抹茶粉', detail: '過篩後放入杯中', highlight: '2g' },
-                    { title: '少量熱水化開', detail: '先化開再加冰，才不會結塊', highlight: '30ml・80°C' },
+                    { title: '少量常溫水化開', detail: '先化開再加冰，才不會結塊', highlight: '30ml・常溫水' },
                     { title: '倒入冰杯', detail: '倒入裝滿冰塊的杯中' },
                     { title: '加冷水或冷牛奶', detail: '依喜好選擇', highlight: '200ml' }
                 ],
@@ -727,6 +727,66 @@ const products = {
                     '覆下栽培一番茶，花崗岩石臼慢挽，一小時僅約 30 公克',
                     '茶道級抹茶，建議直接點茶飲用，不建議調拿鐵或烘焙',
                     '一罐約可點 15 碗薄茶；開封後密封冷藏，一個月內飲用'
+                ]
+            }
+        },
+        {
+            id: 'hojicha-latte',
+            name: '焙茶拿鐵',
+            spec: '靜岡焙茶粉・100g',
+            icon: img('hojicha_1.jpg?v=1792326398'),
+            desc: '堅果焦糖香・溫和順口',
+            buyUrl: SHOP + 'japanese-hojicha-powder-100g',
+            brewing: {
+                steps: [
+                    { title: '取焙茶粉', detail: '過篩後放入杯中，避免結塊', highlight: '2-3g' },
+                    { title: '少量熱水化開', detail: '焙茶需要較高水溫才帶得出香氣', highlight: '30ml・90-100°C' },
+                    { title: '攪拌', detail: '用茶筅或湯匙攪至無顆粒' },
+                    { title: '加入鮮奶', detail: '倒入溫熱鮮奶（約 60-65°C），依喜好加糖', highlight: '200ml' }
+                ],
+                tips: [
+                    '日本綠茶高溫焙煎後研磨，香氣偏烘焙、焦糖調',
+                    '無糖，甜度自己調；加奶不加糖也順口',
+                    '開封後請密封保存，置於陰涼乾燥處'
+                ]
+            }
+        },
+        {
+            id: 'hojicha-iced-latte',
+            name: '冰焙茶拿鐵',
+            spec: '靜岡焙茶粉・100g',
+            icon: img('hojicha_1.jpg?v=1792326398'),
+            desc: '焙香奶茶・冰涼喝',
+            buyUrl: SHOP + 'japanese-hojicha-powder-100g',
+            brewing: {
+                steps: [
+                    { title: '取焙茶粉', detail: '過篩後放入杯中', highlight: '2-3g' },
+                    { title: '少量熱水化開', detail: '先用熱水化開，香氣比較完整', highlight: '30ml・90-100°C' },
+                    { title: '倒入冰杯', detail: '倒入裝滿冰塊的杯中' },
+                    { title: '加冷牛奶', detail: '依喜好加糖', highlight: '200ml' }
+                ],
+                tips: [
+                    '焙茶粉也適合做冰沙與蛋糕餅乾',
+                    '和抹茶不同，焙茶要用較高水溫化開'
+                ]
+            }
+        },
+        {
+            id: 'hojicha-straight',
+            name: '焙茶純飲',
+            spec: '靜岡焙茶粉・100g',
+            icon: img('hojicha_1.jpg?v=1792326398'),
+            desc: '無糖焙茶・熱飲',
+            buyUrl: SHOP + 'japanese-hojicha-powder-100g',
+            brewing: {
+                steps: [
+                    { title: '取焙茶粉', detail: '過篩後放入杯中', highlight: '2g' },
+                    { title: '注入熱水', detail: '焙茶需要較高水溫才帶得出香氣', highlight: '150ml・90-100°C' },
+                    { title: '攪拌', detail: '攪至無顆粒即可飲用' }
+                ],
+                tips: [
+                    '焙煎讓茶色轉為紅褐，帶堅果與焦糖般的香氣',
+                    '不建議直接用冷水泡，先用熱水化開比較不易結塊'
                 ]
             }
         }
